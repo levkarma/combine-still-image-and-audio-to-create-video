@@ -7,5 +7,5 @@ Essentially just a wrapper for FFMPEG. Eventually hope to integrate other option
 ## Usage
 
 ```
-node [image] [folder_of_audio_files]
+node [path_to_script] [image] [folder_of_audio_files]
 ```
