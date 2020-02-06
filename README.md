@@ -6,5 +6,5 @@ Essentially just a wrapper for FFMPEG.
 ## Usage
 
 ```
-node [image to use as background]
+node [image] [folder_of_audio_files]
 ```
