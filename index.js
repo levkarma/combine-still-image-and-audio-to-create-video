@@ -24,8 +24,12 @@ async function mapFilesInDirectory(fullDirectoryPath, callback) {
 		withFileTypes: true
 	});
 	directoryFiles = directoryFiles.filter(file => !file.isDirectory());
+	debug("all files in directory", directoryFiles);
 	for (var i = 0; i < directoryFiles.length; i++) {
-		await callback(directoryFiles[i].name);
+		debug("file name sent to callback", directoryFiles[i].name);
+		await callback(
+			fullAudioFilesDirectoryPath + "/" + directoryFiles[i].name
+		);
 	}
 }
 
@@ -43,6 +47,7 @@ async function createVideoFile(audioFileName) {
 }
 
 function spawnCustomFfmpeg(imageInput, audioInput, outputFileName) {
+	debug("outputFileName", outputFileName);
 	return spawn(
 		"ffmpeg",
 		[
